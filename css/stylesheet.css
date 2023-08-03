@@ -157,7 +157,7 @@ nav a:hover {
 
 /* Content */
 main {
-	background-image: url(/images/background.png);
+	background-image: url(../images/background.png);
 	background-size: contain;
 	background-position: center bottom;
 	background-attachment: fixed;
@@ -167,7 +167,7 @@ main {
     overflow: auto;
 }
 
-article {
+main > p {
 	font-size: 1.5rem;
 	padding: 0 7rem;
 	margin: 0 auto 70px auto;
@@ -241,15 +241,19 @@ p {
 
 .menu-section {
 	margin-bottom: 30px;
+	break-inside: avoid;
+    page-break-inside: avoid;
+    will-change: transform;
 }
 
 .item {
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto 7px auto;
+	
 }
 
-.item p{
+.item p {
 	font-size: 1.25rem;
 	color: #000000;
 }
@@ -356,4 +360,36 @@ footer a:hover {
 
 footer span {
 	margin-bottom: 10px;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px), print {
+
+	nav {
+		width: auto;
+		padding: 10px 20px;
+	}
+
+	nav img {
+		max-width: 100px;
+	}
+
+	nav h1 {
+		font-size: 1em;
+	}
+
+	nav li {
+		display: block;
+		font-size: .75em;
+	}
+
+	.home-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu {
+		columns: 1 auto;
+		justify-content: space-between
+	}
 }
